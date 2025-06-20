@@ -1,0 +1,37 @@
+{
+  "name": "phoenix_vibe_assets",
+  "version": "1.0.0",
+  "description": "Frontend assets for Phoenix Vibe application",
+  "main": "js/app.js",
+  "scripts": {
+    "build": "esbuild js/app.js --bundle --outdir=../priv/static/assets --external:/fonts/* --external:/images/* --loader:.tsx=tsx --loader:.ts=ts",
+    "dev": "esbuild js/app.js --bundle --outdir=../priv/static/assets --external:/fonts/* --external:/images/* --loader:.tsx=tsx --loader:.ts=ts --watch",
+    "deploy": "NODE_ENV=production esbuild js/app.js --bundle --minify --outdir=../priv/static/assets --external:/fonts/* --external:/images/* --loader:.tsx=tsx --loader:.ts=ts"
+  },
+  "keywords": [
+    "phoenix",
+    "react",
+    "elixir"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.518.0",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "esbuild": "^0.19.0",
+    "typescript": "^5.0.0"
+  }
+}
