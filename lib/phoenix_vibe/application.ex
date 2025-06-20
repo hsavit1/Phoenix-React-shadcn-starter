@@ -12,6 +12,8 @@ defmodule PhoenixVibe.Application do
       PhoenixVibe.Repo,
       {DNSCluster, query: Application.get_env(:phoenix_vibe, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PhoenixVibe.PubSub},
+      # Start the Presence system
+      PhoenixVibeWeb.Presence,
       # Start the Finch HTTP client for sending emails
       {Finch, name: PhoenixVibe.Finch},
       # Start a worker by calling: PhoenixVibe.Worker.start_link(arg)
